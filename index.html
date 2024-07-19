@@ -9,6 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script defer src="scripts/header.js"></script>
     <script src="scripts/requestCards.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+
+        if (menuToggle && nav) {
+          menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+          });
+        }
+      });
+    </script>
 </head>
 <body>
     <header id="header">
@@ -16,13 +29,18 @@
             <div class="header__inner">
               <a href="#">
                 <img id="header__logo" src="images/logo.png" width="80" height="80" />
-              </a>
-              <nav class="nav">
-                <a class="nav__link" href="#"><b>О нас</b></a>
-                <a class="nav__link" href="#"><b>Контакты</b></a>
-                <a class="nav__link" href="#"><b>Обратная связь</b></a>
-                <a class="nav__link" href="authorization.html"><b>Авторизация</b></a>
-              </nav>
+            </a>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav class="nav" id="nav">
+              <a class="nav__link" href="#"><b>О нас</b><span class="nav__link-underline"></span></a>
+              <a class="nav__link" href="#"><b>Контакты</b><span class="nav__link-underline"></span></a>
+              <a class="nav__link" href="#"><b>Обратная связь</b><span class="nav__link-underline"></span></a>
+              <a class="nav__link" href="authorization.html"><b>Авторизация</b><span class="nav__link-underline"></span></a>
+            </nav>
             </div>
         </div>
     </header>
